@@ -1,21 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main()
-{
+int main() {
   int a, b;
-  while (cin >> a >> b)
-  {
+  while (cin >> a >> b) {
     if (a == 0 && a == b)
       break;
     int ans = 0, carry = 0;
-    while (a != 0 && b != 0)
-    {
-      if (a % 10 + b % 10 + carry > 9)
-      {
+    while (a != 0 && b != 0) {
+      if (a % 10 + b % 10 + carry > 9) {
         ans += 1;
         carry = 1;
-      }
-      else
+      } else
         carry = 0;
       a /= 10;
       b /= 10;
