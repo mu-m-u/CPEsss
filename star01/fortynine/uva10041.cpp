@@ -1,20 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-  int r, t;
-  vector<int> v;
-  cin >> r;
-  int len;
-  while (r-- && cin >> len) {
-    v.clear();
-    for (int i = 0; i < len; ++i) {
-      cin >> t;
-      v.push_back(t);
-    }
-    sort(v.begin(), v.end());
-    int mid = v[len / 2], ans = 0;
-    for (int i : v)
-      ans += abs(i - mid);
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+
+  int n, r;
+  cin >> n;
+  while (n--) {
+    cin >> r;
+    vector<int> vec(r);
+    for (int i = 0; i < r; ++i)
+      cin >> vec[i];
+    sort(vec.begin(), vec.end());
+    int mid = vec[r / 2], ans = 0;
+    for (int i = 0; i < r; ++i)
+      ans += abs(vec[i] - mid);
     cout << ans << endl;
   }
 }
